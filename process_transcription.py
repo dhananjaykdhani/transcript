@@ -55,7 +55,10 @@ def load_template_context(template_path):
             sent = ws.cell(r, 7).value
             if lbl is not None and sent is not None:
                 lbl_str = str(lbl).strip()
-                mapping[lbl_str] = str(sent).strip()
+                # Clean (with pause), (little fumble), etc. from template reference so hint provides semantic context without biasing pause detection
+                clean_sent = re.sub(r'\(.*?\)', '', str(sent)).strip()
+                clean_sent = re.sub(r'\s+', ' ', clean_sent)
+                mapping[lbl_str] = clean_sent
     except Exception as e:
         print(f"Notice: Could not load template context: {e}")
     return mapping

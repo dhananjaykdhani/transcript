@@ -242,8 +242,9 @@ Listen carefully to the audio. Your job has THREE parts:
 PART A — Transcription (most important):
 1. Accuracy: 100% faithful to what the speaker actually says.
 2. Pause & Hesitation Detection:
-   - Insert "(with pause)" at the exact position of any inter-word pause (e.g. "Waitress chor ko (with pause) laat maar rahi h").
-   - Insert "(little fumble)" at false starts or repairs (e.g. "Waitress (little fumble) aadmi ko laat maar rahi h").
+   - Insert "(with pause)" ONLY if there is a noticeable, prolonged silence strictly greater than 400 milliseconds (0.4s) mid-sentence where the speaker hesitates.
+   - Do NOT insert "(with pause)" for fluent continuous speech, normal word boundaries, or natural brief breaths (<400ms).
+   - Insert "(little fumble)" at false starts, stutters, or speech repairs (e.g. "Waitress (little fumble) aadmi ko laat maar rahi h").
 3. Roman Hindi: Natural conversational Hinglish matching CBCS conventions (e.g. "Police tairak ka peecha kr rhi h", "Chef chor ko goli maar raha h", "Aadmi doctor ko mukka maar raha h").
 4. Hindi (Devanagari): Exact Devanagari transcription.
 
